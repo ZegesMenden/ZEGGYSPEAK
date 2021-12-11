@@ -1,0 +1,37 @@
+operations for ZEGGYSPEAK
+
+ZEGGYSPEAK operates on a list of empty integers that is 1000 spaces wide
+
+the language operates by having a "pointer" to any one of these 1000 spaces.
+the pointer start at address zero, and can move to any valid address via zeggy operations
+when the pointer is at any address, it can perform operations on the current memort at the address
+things like iteration, reading, writing, etc.
+
+timing
+
+zeggy <ms> - delay for x ms where x is the input parameter, defaults to 1 if no input is given
+
+arithmatic / block operations
+
+zegGy <x> - iterate current block by x, defaults to 1
+zeGgy <x> - iterate current block by -x, defaults to -1
+
+ZegGy <x> - iterate current block by value in accumulator x, defaults to accumulator 1
+ZeGgy <x> - iterate current block by -value in accumulator x, defaults to accumulator 1
+
+ZEGGY <x ( 1 or 2 )> - load current block into accumulator x
+ZEGGy <x ( 1 or 2 )> - write data from accumulator x to the current block
+
+ZEggy <no_params> - sets current memory block to zero
+
+zeGGY <x> - jumps to memory block x is current memory block is not zero
+
+movement commands 
+
+Zeggy <x> - move -x integers in memory space (move to the "left" x memory spaces)
+zeggY <x> - move x integers in memory space (move to the "right" x memory spaces)
+
+IO commands
+
+zEGGy <no_params> - read the CLI for a number and write it to the current address
+zEggy <x> - write the current address to the CLI, set x to 1 to print as a string instead of an integer
