@@ -122,42 +122,76 @@ print("parsing ZEGGYSPEAK operations")
 for line in f:
 
     line_split = line.split(' ')
-    if len(line_split) > 2:
+    if len(line_split) >= 1:
         op = line_split[0]
-        if line_split[1] == '' or line_split[1].isalpha():
+        if len(line_split) >= 2:
+            if line_split[1] == '' or line_split[1].isalpha():
+                arg = 0
+            else:
+                arg = int(line_split[1])
+            
+            if op == "zeggy":
+                output += zeggy(arg)
+            elif op == "zegGy":
+                output += zegGy(arg)
+            elif op == "zeGgy":
+                output += zeGgy(arg)
+            elif op == "Zeggy":
+                output += Zeggy(arg)
+            elif op == "zeggY":
+                output += zeggY(arg)
+            elif op == "zEGGy":
+                output += zEGGy(arg)
+            elif op == "zEggy":
+                output += zEggy(arg)
+            elif op == "ZEGGY":
+                output += ZEGGY(arg)
+            elif op == "ZEGGy":
+                output += ZEGGy(arg)
+            elif op == "ZegGy":
+                output += ZegGy(arg)
+            elif op == "ZeGgy":
+                output += ZeGgy(arg)
+            elif op == "ZEggy":
+                output += ZEggy(arg)
+            # elif op == "":
+            #     output += (arg)
+            
+            else:
+                output += '\n'
+        else:
             arg = 0
-        else:
-            arg = int(line_split[1])
-        
-        if op == "zeggy":
-            output += zeggy(arg)
-        elif op == "zegGy":
-            output += zegGy(arg)
-        elif op == "zeGgy":
-            output += zeGgy(arg)
-        elif op == "Zeggy":
-            output += Zeggy(arg)
-        elif op == "zeggY":
-            output += zeggY(arg)
-        elif op == "zEGGy":
-            output += zEGGy(arg)
-        elif op == "zEggy":
-            output += zEggy(arg)
-        elif op == "ZEGGY":
-            output += ZEGGY(arg)
-        elif op == "ZEGGy":
-            output += ZEGGy(arg)
-        elif op == "ZegGy":
-            output += ZegGy(arg)
-        elif op == "ZeGgy":
-            output += ZeGgy(arg)
-        elif op == "ZEggy":
-            output += ZEggy(arg)
-        # elif op == "":
-        #     output += (arg)
-        
-        else:
-            output += '\n'
+
+            if len(op) > 4:
+                op = op[:5]
+
+            if op == "zeggy":
+                output += zeggy(arg)
+            elif op == "zegGy":
+                output += zegGy(arg)
+            elif op == "zeGgy":
+                output += zeGgy(arg)
+            elif op == "Zeggy":
+                output += Zeggy(arg)
+            elif op == "zeggY":
+                output += zeggY(arg)
+            elif op == "zEGGy":
+                output += zEGGy(arg)
+            elif op == "zEggy":
+                output += zEggy(arg)
+            elif op == "ZEGGY":
+                output += ZEGGY(arg)
+            elif op == "ZEGGy":
+                output += ZEGGy(arg)
+            elif op == "ZegGy":
+                output += ZegGy(arg)
+            elif op == "ZeGgy":
+                output += ZeGgy(arg)
+            elif op == "ZEggy":
+                output += ZEggy(arg)
+            # elif op == "":
+            #     output += (arg)
+
     else:
         output += '\n'
     
